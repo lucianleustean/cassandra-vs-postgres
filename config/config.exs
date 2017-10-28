@@ -7,7 +7,7 @@ use Mix.Config
 
 # General application configuration
 config :cassandra_playground,
-  ecto_repos: [CassandraPlayground.Repo]
+  ecto_repos: [CassandraPlayground.RepoPostgres, CassandraPlayground.RepoCassandra]
 
 # Configures the endpoint
 config :cassandra_playground, CassandraPlaygroundWeb.Endpoint,
