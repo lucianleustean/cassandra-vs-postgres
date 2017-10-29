@@ -1,5 +1,5 @@
 defmodule CassandraPlayground.Cassandra.Playgroud do
-  use Ecto.Schema
+  use CassandraPlayground.Schema
   import Ecto.Changeset
   alias CassandraPlayground.Cassandra.Playgroud
 

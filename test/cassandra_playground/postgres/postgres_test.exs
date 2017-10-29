@@ -1,5 +1,5 @@
 defmodule CassandraPlayground.PostgresTest do
-  use CassandraPlayground.DataCase
+  use CassandraPlayground.DataCasePostgres
 
   alias CassandraPlayground.Postgres
 

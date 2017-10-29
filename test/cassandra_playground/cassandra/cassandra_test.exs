@@ -1,5 +1,5 @@
 defmodule CassandraPlayground.CassandraTest do
-  use CassandraPlayground.DataCase
+  use CassandraPlayground.DataCaseCassandra
 
   alias CassandraPlayground.Cassandra
 
