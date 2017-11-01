@@ -1,4 +1,4 @@
-defmodule CassandraPlayground.Repo do
+defmodule CassandraPlayground.RepoPostgres do
   use Ecto.Repo, otp_app: :cassandra_playground
 
   @doc """

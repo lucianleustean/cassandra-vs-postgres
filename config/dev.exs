@@ -47,11 +47,15 @@ config :logger, :console, format: "[$level] $message\n"
 # in production as building large stacktraces may be expensive.
 config :phoenix, :stacktrace_depth, 20
 
-# Configure your database
-config :cassandra_playground, CassandraPlayground.Repo,
+# Configure your Postgres database
+config :cassandra_playground, CassandraPlayground.RepoPostgres,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
   database: "cassandra_playground_dev",
   hostname: "localhost",
   pool_size: 10
+
+# Configure your Cassandra database
+config :cassandra_playground, CassandraPlayground.RepoCassandra,
+  keyspace: "cassandra_playground_dev"

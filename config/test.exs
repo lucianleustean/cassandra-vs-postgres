@@ -9,11 +9,15 @@ config :cassandra_playground, CassandraPlaygroundWeb.Endpoint,
 # Print only warnings and errors during test
 config :logger, level: :warn
 
-# Configure your database
-config :cassandra_playground, CassandraPlayground.Repo,
+# Configure your Postgres database
+config :cassandra_playground, CassandraPlayground.RepoPostgres,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
   password: "postgres",
   database: "cassandra_playground_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Configure your Cassandra database
+config :cassandra_playground, CassandraPlayground.RepoCassandra,
+  keyspace: "cassandra_playground_test"

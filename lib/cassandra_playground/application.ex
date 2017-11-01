@@ -9,7 +9,8 @@ defmodule CassandraPlayground.Application do
     # Define workers and child supervisors to be supervised
     children = [
       # Start the Ecto repository
-      supervisor(CassandraPlayground.Repo, []),
+      supervisor(CassandraPlayground.RepoPostgres, []),
+      supervisor(CassandraPlayground.RepoCassandra, []),
       # Start the endpoint when the application starts
       supervisor(CassandraPlaygroundWeb.Endpoint, []),
       # Start your own worker by calling: CassandraPlayground.Worker.start_link(arg1, arg2, arg3)

@@ -1,4 +1,6 @@
-# CassandraPlayground
+# Cassandra vs Postgres - Playground
+
+First, ensure you have Cassandra and Postgres servers running
 
 To start your Phoenix server:
 

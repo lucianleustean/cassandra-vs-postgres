@@ -40,7 +40,9 @@ defmodule CassandraPlayground.Mixfile do
       {:phoenix_html, "~> 2.10"},
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
-      {:cowboy, "~> 1.0"}
+      {:cowboy, "~> 1.0"},
+      {:cqerl, github: "matehat/cqerl", tag: "v1.0.8"},
+      {:cassandra_ecto, github: "vintikzzz/cassandra_ecto"},
     ]
   end
 
@@ -52,7 +54,7 @@ defmodule CassandraPlayground.Mixfile do
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
     [
-      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo/seeds.exs"],
+      "ecto.setup": ["ecto.create", "ecto.migrate", "run priv/repo_postgres/seeds.exs", "run priv/repo_cassandra/seeds.exs"],
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       "test": ["ecto.create --quiet", "ecto.migrate", "test"]
     ]

@@ -28,9 +28,9 @@ defmodule CassandraPlaygroundWeb.ConnCase do
 
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CassandraPlayground.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CassandraPlayground.RepoPostgres)
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(CassandraPlayground.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CassandraPlayground.RepoPostgres, {:shared, self()})
     end
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end

@@ -1,4 +1,4 @@
-defmodule CassandraPlayground.DataCase do
+defmodule CassandraPlayground.DataCasePostgres do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule CassandraPlayground.DataCase do
 
   using do
     quote do
-      alias CassandraPlayground.Repo
+      alias CassandraPlayground.RepoPostgres
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import CassandraPlayground.DataCase
+      import CassandraPlayground.DataCasePostgres
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CassandraPlayground.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(CassandraPlayground.RepoPostgres)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(CassandraPlayground.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(CassandraPlayground.RepoPostgres, {:shared, self()})
     end
 
     :ok
