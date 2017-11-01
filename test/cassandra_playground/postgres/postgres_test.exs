@@ -3,63 +3,63 @@ defmodule CassandraPlayground.PostgresTest do
 
   alias CassandraPlayground.Postgres
 
-  describe "playgroud" do
-    alias CassandraPlayground.Postgres.Playgroud
+  describe "playground" do
+    alias CassandraPlayground.Postgres.Playground
 
     @valid_attrs %{name: "some name"}
     @update_attrs %{name: "some updated name"}
     @invalid_attrs %{name: nil}
 
-    def playgroud_fixture(attrs \\ %{}) do
-      {:ok, playgroud} =
+    def playground_fixture(attrs \\ %{}) do
+      {:ok, playground} =
         attrs
         |> Enum.into(@valid_attrs)
-        |> Postgres.create_playgroud()
+        |> Postgres.create_playground()
 
-      playgroud
+      playground
     end
 
-    test "list_playgroud/0 returns all playgroud" do
-      playgroud = playgroud_fixture()
-      assert Postgres.list_playgroud() == [playgroud]
+    test "list_playground/0 returns all playground" do
+      playground = playground_fixture()
+      assert Postgres.list_playground() == [playground]
     end
 
-    test "get_playgroud!/1 returns the playgroud with given id" do
-      playgroud = playgroud_fixture()
-      assert Postgres.get_playgroud!(playgroud.id) == playgroud
+    test "get_playground!/1 returns the playground with given id" do
+      playground = playground_fixture()
+      assert Postgres.get_playground!(playground.id) == playground
     end
 
-    test "create_playgroud/1 with valid data creates a playgroud" do
-      assert {:ok, %Playgroud{} = playgroud} = Postgres.create_playgroud(@valid_attrs)
-      assert playgroud.name == "some name"
+    test "create_playground/1 with valid data creates a playground" do
+      assert {:ok, %Playground{} = playground} = Postgres.create_playground(@valid_attrs)
+      assert playground.name == "some name"
     end
 
-    test "create_playgroud/1 with invalid data returns error changeset" do
-      assert {:error, %Ecto.Changeset{}} = Postgres.create_playgroud(@invalid_attrs)
+    test "create_playground/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Postgres.create_playground(@invalid_attrs)
     end
 
-    test "update_playgroud/2 with valid data updates the playgroud" do
-      playgroud = playgroud_fixture()
-      assert {:ok, playgroud} = Postgres.update_playgroud(playgroud, @update_attrs)
-      assert %Playgroud{} = playgroud
-      assert playgroud.name == "some updated name"
+    test "update_playground/2 with valid data updates the playground" do
+      playground = playground_fixture()
+      assert {:ok, playground} = Postgres.update_playground(playground, @update_attrs)
+      assert %Playground{} = playground
+      assert playground.name == "some updated name"
     end
 
-    test "update_playgroud/2 with invalid data returns error changeset" do
-      playgroud = playgroud_fixture()
-      assert {:error, %Ecto.Changeset{}} = Postgres.update_playgroud(playgroud, @invalid_attrs)
-      assert playgroud == Postgres.get_playgroud!(playgroud.id)
+    test "update_playground/2 with invalid data returns error changeset" do
+      playground = playground_fixture()
+      assert {:error, %Ecto.Changeset{}} = Postgres.update_playground(playground, @invalid_attrs)
+      assert playground == Postgres.get_playground!(playground.id)
     end
 
-    test "delete_playgroud/1 deletes the playgroud" do
-      playgroud = playgroud_fixture()
-      assert {:ok, %Playgroud{}} = Postgres.delete_playgroud(playgroud)
-      assert_raise Ecto.NoResultsError, fn -> Postgres.get_playgroud!(playgroud.id) end
+    test "delete_playground/1 deletes the playground" do
+      playground = playground_fixture()
+      assert {:ok, %Playground{}} = Postgres.delete_playground(playground)
+      assert_raise Ecto.NoResultsError, fn -> Postgres.get_playground!(playground.id) end
     end
 
-    test "change_playgroud/1 returns a playgroud changeset" do
-      playgroud = playgroud_fixture()
-      assert %Ecto.Changeset{} = Postgres.change_playgroud(playgroud)
+    test "change_playground/1 returns a playground changeset" do
+      playground = playground_fixture()
+      assert %Ecto.Changeset{} = Postgres.change_playground(playground)
     end
   end
 end

@@ -1,11 +1,11 @@
-defmodule CassandraPlayground.Cassandra.Playgroud do
+defmodule CassandraPlayground.Cassandra.Playground do
   use CassandraPlayground.Schema
   import Ecto.Changeset
-  alias CassandraPlayground.Cassandra.Playgroud
+  alias CassandraPlayground.Cassandra.Playground
 
   @primary_key false
 
-  schema "playgroud" do
+  schema "playground" do
     field :id, Ecto.UUID, [autogenerate: true, primary_key: true]
     field :name, :string
 
@@ -13,8 +13,8 @@ defmodule CassandraPlayground.Cassandra.Playgroud do
   end
 
   @doc false
-  def changeset(%Playgroud{} = playgroud, attrs) do
-    playgroud
+  def changeset(%Playground{} = playground, attrs) do
+    playground
     |> cast(attrs, [:name])
     |> validate_required([:name])
   end

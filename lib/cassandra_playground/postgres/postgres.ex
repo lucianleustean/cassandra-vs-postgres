@@ -6,99 +6,99 @@ defmodule CassandraPlayground.Postgres do
   import Ecto.Query, warn: false
   alias CassandraPlayground.RepoPostgres
 
-  alias CassandraPlayground.Postgres.Playgroud
+  alias CassandraPlayground.Postgres.Playground
 
   @doc """
-  Returns the list of playgroud.
+  Returns the list of playground.
 
   ## Examples
 
-      iex> list_playgroud()
-      [%Playgroud{}, ...]
+      iex> list_playground()
+      [%Playground{}, ...]
 
   """
-  def list_playgroud do
-    RepoPostgres.all(Playgroud)
+  def list_playground do
+    RepoPostgres.all(Playground)
   end
 
   @doc """
-  Gets a single playgroud.
+  Gets a single playground.
 
-  Raises `Ecto.NoResultsError` if the Playgroud does not exist.
+  Raises `Ecto.NoResultsError` if the Playground does not exist.
 
   ## Examples
 
-      iex> get_playgroud!(123)
-      %Playgroud{}
+      iex> get_playground!(123)
+      %Playground{}
 
-      iex> get_playgroud!(456)
+      iex> get_playground!(456)
       ** (Ecto.NoResultsError)
 
   """
-  def get_playgroud!(id), do: RepoPostgres.get!(Playgroud, id)
+  def get_playground!(id), do: RepoPostgres.get!(Playground, id)
 
   @doc """
-  Creates a playgroud.
+  Creates a playground.
 
   ## Examples
 
-      iex> create_playgroud(%{field: value})
-      {:ok, %Playgroud{}}
+      iex> create_playground(%{field: value})
+      {:ok, %Playground{}}
 
-      iex> create_playgroud(%{field: bad_value})
+      iex> create_playground(%{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def create_playgroud(attrs \\ %{}) do
-    %Playgroud{}
-    |> Playgroud.changeset(attrs)
+  def create_playground(attrs \\ %{}) do
+    %Playground{}
+    |> Playground.changeset(attrs)
     |> RepoPostgres.insert()
   end
 
   @doc """
-  Updates a playgroud.
+  Updates a playground.
 
   ## Examples
 
-      iex> update_playgroud(playgroud, %{field: new_value})
-      {:ok, %Playgroud{}}
+      iex> update_playground(playground, %{field: new_value})
+      {:ok, %Playground{}}
 
-      iex> update_playgroud(playgroud, %{field: bad_value})
+      iex> update_playground(playground, %{field: bad_value})
       {:error, %Ecto.Changeset{}}
 
   """
-  def update_playgroud(%Playgroud{} = playgroud, attrs) do
-    playgroud
-    |> Playgroud.changeset(attrs)
+  def update_playground(%Playground{} = playground, attrs) do
+    playground
+    |> Playground.changeset(attrs)
     |> RepoPostgres.update()
   end
 
   @doc """
-  Deletes a Playgroud.
+  Deletes a Playground.
 
   ## Examples
 
-      iex> delete_playgroud(playgroud)
-      {:ok, %Playgroud{}}
+      iex> delete_playground(playground)
+      {:ok, %Playground{}}
 
-      iex> delete_playgroud(playgroud)
+      iex> delete_playground(playground)
       {:error, %Ecto.Changeset{}}
 
   """
-  def delete_playgroud(%Playgroud{} = playgroud) do
-    RepoPostgres.delete(playgroud)
+  def delete_playground(%Playground{} = playground) do
+    RepoPostgres.delete(playground)
   end
 
   @doc """
-  Returns an `%Ecto.Changeset{}` for tracking playgroud changes.
+  Returns an `%Ecto.Changeset{}` for tracking playground changes.
 
   ## Examples
 
-      iex> change_playgroud(playgroud)
-      %Ecto.Changeset{source: %Playgroud{}}
+      iex> change_playground(playground)
+      %Ecto.Changeset{source: %Playground{}}
 
   """
-  def change_playgroud(%Playgroud{} = playgroud) do
-    Playgroud.changeset(playgroud, %{})
+  def change_playground(%Playground{} = playground) do
+    Playground.changeset(playground, %{})
   end
 end

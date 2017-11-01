@@ -26,7 +26,7 @@ defmodule CassandraPlayground.DataCaseCassandra do
   end
 
   setup _tags do
-    Cassandra.Ecto.query(CassandraPlayground.RepoCassandra, "TRUNCATE playgroud;", [])
+    Cassandra.Ecto.query(CassandraPlayground.RepoCassandra, "TRUNCATE playground;", [])
     :ok
   end
 
