@@ -24,6 +24,18 @@ defmodule CassandraPlayground.CassandraTest do
       assert Cassandra.list_playground() == [playground]
     end
 
+    # THIS FAILS
+    test "list_playground/1 returns latest 5 playground resources" do
+      playground = playground_fixture()
+      assert Cassandra.list_playground(5) == [playground]
+    end
+
+    # THIS PASSES
+    test "list_playground/1 returns latest n playground resources" do
+      playground = playground_fixture()
+      assert Cassandra.list_playground(10) == [playground]
+    end
+
     test "get_playground!/1 returns the playground with given id" do
       playground = playground_fixture()
       assert Cassandra.get_playground!(playground.id) == playground

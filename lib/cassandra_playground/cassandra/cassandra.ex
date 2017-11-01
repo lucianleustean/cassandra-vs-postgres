@@ -22,6 +22,25 @@ defmodule CassandraPlayground.Cassandra do
   end
 
   @doc """
+  Returns the list of latest n playground elements.
+
+  ## Examples
+
+      iex> list_playground(limit)
+      [%Playground{}, ...]
+
+  """
+  def list_playground(10) do
+    query = from p in Playground, limit: 10
+    RepoCassandra.all(query)
+  end
+
+  def list_playground(limit) do
+    query = from p in Playground, limit: ^limit
+    RepoCassandra.all(query)
+  end
+
+  @doc """
   Gets a single playground.
 
   Raises `Ecto.NoResultsError` if the Playground does not exist.
